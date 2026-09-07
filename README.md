@@ -135,7 +135,9 @@ git clone https://github.com/yjn-pj/wechat-production-system.git \
 - 截图工作台
 - 图片验证器
 
-如果环境中存在 `khazix-writer`、`article-visuals`、`baoyu-cover-image` 等技能，会作为可选增强；没有也不会影响使用。
+这个 Skill 默认使用自己的内置创作台完成全流程。质量标准、交付结构和终审判断都由本 Skill 控制。
+
+如果环境中已经存在 `khazix-writer`、`article-visuals`、`baoyu-cover-image` 等技能，它们只作为执行适配器使用；没有这些 Skill，会自动走内置方案，不需要用户额外安装任何依赖。
 
 ## License
 
