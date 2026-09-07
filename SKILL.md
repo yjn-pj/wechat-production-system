@@ -20,7 +20,7 @@ description: 公众号选题到发文的一条龙生产系统，适合热点解�
 
 | 用户请求 | 模式 | 必读 |
 |---|---|---|
-| 只给主题，要写文章 | `full` | `references/production-memory.md` |
+| 只给主题，要写文章 | `full` | `references/production-memory.md`、`references/built-in-studio.md` |
 | 一句话直接要成品 | `one-shot` | `references/production-memory.md` |
 | 已有素材/链接/初稿 | `material` | `references/evidence.md` |
 | 热点事件 | `hot-topic` | `references/evidence.md`、`references/structure.md` |
@@ -28,7 +28,7 @@ description: 公众号选题到发文的一条龙生产系统，适合热点解�
 | 教程/变现路线 | `tutorial` | `references/tutorial.md` |
 | 只改稿/去AI味 | `edit` | `references/de-ai.md` |
 | 只起标题 | `title` | `references/title.md` |
-| 只做配图/封面 | `visual` | `references/visual.md` |
+| 只做配图/封面 | `visual` | `references/visual.md`、`references/built-in-studio.md` |
 | 发表前检查/排版检查 | `publish` | `references/publishing.md` |
 | 复盘数据/迭代选题 | `retro` | `references/production-memory.md` |
 
@@ -178,6 +178,8 @@ description: 公众号选题到发文的一条龙生产系统，适合热点解�
 
 ### 6. 配图：图像必须降低理解成本
 
+必须先读取 `references/built-in-studio.md`，使用内置文风引擎、图位规划器、图片提示词引擎、封面设计器、截图工作台和图片验证器。没有其他 Skill 时不得拒绝执行。
+
 一篇文章至少满足：
 
 1. 一张封面；
@@ -319,7 +321,7 @@ python3 ~/.codex/skills/wechat-production-system/scripts/preflight.py outputs/<s
 
 ## 依赖技能
 
-按需调用，不强制全部加载：
+核心功能不依赖外部 Skill。以下 Skill 只是执行增强，不是能力缺口：
 
 - `khazix-writer`：公众号文风和活人感；
 - `article-visuals`：整套配图规划；
