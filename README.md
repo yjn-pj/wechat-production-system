@@ -232,18 +232,37 @@ python3 scripts/preflight.py outputs/my-article --mode standard
 
 机械检查通过后，仍需人工检查事实、语气、标题承诺和视觉质量。
 
-## 可选依赖
+## 内置能力
 
-核心功能不依赖其他 Skill。如果安装以下 Skill，效果更好：
+这个 Skill 是傻瓜式可用的，不需要再安装其他 Skill。以下能力已经内置：
 
-| Skill | 作用 |
+| 能力 | 内置模块 |
 |---|---|
-| khazix-writer | 公众号文风和活人感 |
-| article-visuals | 配图规划 |
-| peituka-basics | 图片提示词规范 |
-| baoyu-cover-image | 封面生成流程 |
-| verification | 图片检查 |
-| screenshot / browser | 网页截图 |
+| 公众号文风和活人感 | 公众号文风引擎 |
+| 配图规划 | 图位规划器 |
+| 图片提示词 | 图片提示词引擎 |
+| 封面设计 | 封面设计器 |
+| 网页/证据截图 | 截图工作台 |
+| 图片质量检查 | 图片验证器 |
+
+也就是说，只安装 `wechat-production-system`，也可以完整跑：
+
+```text
+选题 → 证据 → 写稿 → 去AI味 → 标题 → 图位 → 截图 → 图解 → 封面 → 检查
+```
+
+### 可选增强
+
+如果环境中已经安装以下 Skill，会优先调用它们的执行能力；没有安装时自动使用内置方案，不会报错：
+
+| Skill | 增强点 | 内置替代 |
+|---|---|---|
+| khazix-writer | 文风润色 | 公众号文风引擎 |
+| article-visuals | 配图规划 | 图位规划器 |
+| peituka-basics | 图片 Prompt | 图片提示词引擎 |
+| baoyu-cover-image | 封面生成 | 封面设计器 |
+| verification | 图片检查 | 图片验证器 |
+| screenshot / browser | 页面截图 | 截图任务清单 |
 
 ## 设计原则
 
